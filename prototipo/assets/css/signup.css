@@ -1,0 +1,35 @@
+
+:root{
+    --petroleo:  #2d8183;
+    --coral: #e07a5f;
+    --orange: #F4A261;
+}
+
+.campos-texto {
+    display: none;
+    margin-top: 10px;
+}
+
+
+.btn-primary{
+    background-color:var(--petroleo);
+    border: var(--petroleo);
+}
+
+.btn-primary:hover{
+    background-color: var(--coral);
+    border: var(--coral);
+}
+
+select, input, textarea{
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+}
+
+.senha{
+    margin: 5px 10px;
+}
+
+main{
+    background-color: var(--orange)
+}
