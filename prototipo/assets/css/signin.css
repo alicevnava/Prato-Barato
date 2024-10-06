@@ -1,13 +1,8 @@
-
 :root{
     --petroleo:  #2d8183;
     --coral: #e07a5f;
     --orange: #F4A261;
-}
-
-.campos-texto {
-    display: none;
-    margin-top: 10px;
+    --yellow: #E9C46A;
 }
 
 
@@ -22,25 +17,30 @@
     border: var(--coral);
 }
 
-select, input, textarea{
-    border-radius: 5px;
-    border: 1px solid #ced4da;
-}
-
-.senha{
-    margin: 5px 10px;
-}
 
 main{
-    background-color: var(--orange)
+    background-color: var(--yellow);
 }
 
+
+.forgot-btn{
+    margin-bottom: 50px ;
+}
+
+#forgot-modal{
+    border: none;
+    background-color: transparent;
+    color: var(--petroleo);
+}
+
+
+#user-forgot{
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+}
 
 a{
     color: var(--petroleo);
     text-decoration: none;
 }
 
-label, input{
-    margin-top: 7px;
-}
