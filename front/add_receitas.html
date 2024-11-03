@@ -15,97 +15,96 @@
     <header></header>
 
     <main>
-        <div class="modal fade" id="receitasModal" tabindex="-1" aria-labelledby="receitasModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="cargosModalLabel">Receitas</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- nome -->
-                        <div class="mb-3">
-                            <label for="nomeReceita" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="nomeReceita" placeholder="Nome da Receita"
-                                required>
+        <form id="formReceita" method="get" action="/submit_receita">
+            <div class="modal fade" id="receitasModal" tabindex="-1" aria-labelledby="receitasModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="receitasModalLabel">Receitas</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <!-- codigo -->
-                        <div class="mb-3">
-                            <label for="codigoReceita" class="form-label">Código</label>
-                            <input type="text" class="form-control" id="codigoReceita" placeholder="Código da receita"
-                                required>
-                        </div>
-                        <!-- data -->
-                        <div class="mb-3">
-                            <label for="dataReceita" class="form-label">Código</label>
-                            <input type="date" class="form-control" id="dataReceita" required>
-                        </div>
-                        <!-- descrição -->
-                        <div class="form-group">
-                            <label for="descricaoReceita">Descrição</label>
-                            <textarea class="form-control" id="descricaoReceita" rows="3"
-                                placeholder="Descrição da Receita" required></textarea>
-                        </div>
-                        <!-- categoria -->
-                        <div id="categoria-select">
-                            <label for="form-select categoria-select" style="padding-bottom: 5px;">Restaurantes</label>
-                            <select class="form-select categoria-select " aria-label="Default select example" required>
-                                <option value="1">Café da Manhã</option>
-                                <option value="2">Principal</option>
-                                <option value="3">Sobremesa</option>
-                                <option value="4">Lanche</option>
-                                <option value="5">Sobremesa</option>
-
-                            </select>
-                        </div>
-                        <!--porções-->
-                        <div class="mb-3">
-                            <label for="porcao" class="form-label">Porções</label>
-                            <input type="number" class="form-control" id="porcao" placeholder="Porções"
-                                required>
-                        </div>
-                        <!-- cozinheiro -->
-                        <div id="cozinheiro-select">
-                            <label for="form-select cozinheiro-select" style="padding-bottom: 5px;">Categoria</label>
-                            <select class="form-select cozinheiro-select " aria-label="Default select example" required>
-                                <option value="1">Cozinheiro 1</option>
-                                <option value="2">Cozinheiro 2</option>
-                                <option value="3">Cozinheiro 3</option>
-                            </select>
-                        </div>
-                        <!-- imagem -->
-                        <div class="mb-3">
-                            <label for="formFile" class="form-label">Imagem</label>
-                            <input class="form-control" type="file" id="formFile">
-                          </div>
-
-                        <!-- status -->
-                         <div id="statusReceita"> 
-                            <label for="statusReceita">Status</label>
-                         </div>
-                        <div class="form-check receita-inedita">
-                            <input class="form-check-input receita-inedita" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                            <label class="form-check-label receita-inedita" for="flexRadioDefault1">
-                              Inédita
-                            </label>
-                          </div>
-                          <div class="form-check receita-publicada">
-                            <input class="form-check-input receita-publicada" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                            <label class="form-check-label receita-publicada" for="flexRadioDefault2">
-                              Publicada
-                            </label>
-                          </div>
-
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary save-button">Salvar</button>
+                        <div class="modal-body">
+                            <!-- Nome -->
+                            <div class="mb-3">
+                                <label for="nomeReceita" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="nomeReceita" name="nomeReceita" placeholder="Nome da Receita" required>
+                            </div>
+    
+                            <!-- Código -->
+                            <div class="mb-3">
+                                <label for="codigoReceita" class="form-label">Código</label>
+                                <input type="text" class="form-control" id="codigoReceita" name="codigoReceita" placeholder="Código da receita" required>
+                            </div>
+    
+                            <!-- Data -->
+                            <div class="mb-3">
+                                <label for="dataReceita" class="form-label">Data</label>
+                                <input type="date" class="form-control" id="dataReceita" name="dataReceita" required>
+                            </div>
+    
+                            <!-- Descrição -->
+                            <div class="form-group mb-3">
+                                <label for="descricaoReceita" class="form-label">Descrição</label>
+                                <textarea class="form-control" id="descricaoReceita" name="descricaoReceita" rows="3" placeholder="Descrição da Receita" required></textarea>
+                            </div>
+    
+                            <!-- Categoria -->
+                            <div class="mb-3">
+                                <label for="categoria-select" class="form-label">Categoria</label>
+                                <select class="form-select" id="categoria-select" name="categoriaReceita" required>
+                                    <option value="1">Café da Manhã</option>
+                                    <option value="2">Principal</option>
+                                    <option value="3">Sobremesa</option>
+                                    <option value="4">Lanche</option>
+                                    <option value="5">Bebida</option>
+                                </select>
+                            </div>
+    
+                            <!-- Porções -->
+                            <div class="mb-3">
+                                <label for="porcao" class="form-label">Porções</label>
+                                <input type="number" class="form-control" id="porcao" name="porcao" placeholder="Porções" required>
+                            </div>
+    
+                            <!-- Cozinheiro -->
+                            <div class="mb-3">
+                                <label for="cozinheiro-select" class="form-label">Cozinheiro</label>
+                                <select class="form-select" id="cozinheiro-select" name="cozinheiro" required>
+                                    <option value="1">Cozinheiro 1</option>
+                                    <option value="2">Cozinheiro 2</option>
+                                    <option value="3">Cozinheiro 3</option>
+                                </select>
+                            </div>
+    
+                            <!-- Imagem -->
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Imagem</label>
+                                <input class="form-control" type="file" id="formFile" name="imagemReceita">
+                            </div>
+    
+                            <!-- Status -->
+                            <div class="mb-3">
+                                <label for="statusReceita" class="form-label">Status</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="statusReceita" id="statusInedita" value="Inédita" required>
+                                    <label class="form-check-label" for="statusInedita">Inédita</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="statusReceita" id="statusPublicada" value="Publicada">
+                                    <label class="form-check-label" for="statusPublicada">Publicada</label>
+                                </div>
+                            </div>
+    
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary save-button">Salvar</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </main>
+    
 
 
 

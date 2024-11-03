@@ -12,26 +12,29 @@
     <header></header>
 
     <main>
-        <div class="modal fade" id="restaurantesModal" tabindex="-1" aria-labelledby="restaurantesModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="restaurantesModalLabel">Restaurantes</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="nomeRestaurante">Nome do Restaurante</label>
-                            <input class="form-control" type="text" placeholder="Nome do Restaurante" aria-label="default input example" id="nomeRestaurante" required>
+        <form id="formRestaurante" method="get" action="/submit_restaurante">
+            <div class="modal fade" id="restaurantesModal" tabindex="-1" aria-labelledby="restaurantesModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="restaurantesModalLabel">Restaurantes</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary save-button">Salvar</button>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="nomeRestaurante">Nome do Restaurante</label>
+                                <input class="form-control" type="text" name="nomeRestaurante" placeholder="Nome do Restaurante" aria-label="default input example" id="nomeRestaurante" required>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary save-button">Salvar</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </main>
+    
     
     
 

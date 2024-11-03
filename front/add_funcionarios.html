@@ -15,88 +15,91 @@
     <header></header>
 
     <main>
-        <div class="modal fade" id="funcionariosModal" tabindex="-1" aria-labelledby="funcionariosModalLabel"
-            aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="funcionariosModalLabel">Funcionários</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <!-- nome -->
-                        <div class="mb-3">
-                            <label for="formGroupExampleInput" class="form-label" id="nomeFuncionarios">Nome do
-                                Funcionário</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput"
-                                placeholder="Fulano Da Silva" required>
+        <form id="formFuncionarios" method="get" action="/submit_funcionario">
+            <div class="modal fade" id="funcionariosModal" tabindex="-1" aria-labelledby="funcionariosModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="funcionariosModalLabel">Funcionários</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                        <!-- cargos -->
-                        <div id="cargos-select">
-                            <label for="form-select" style="padding-bottom: 5px;">Cargo</label>
-                            <select class="form-select" aria-label="Default select example" required>
-                                <option value="1">Cozinheiro</option>
-                                <option value="2">Degustador</option>
-                                <option value="3">Editor</option>
-                                <option value="4">Administrador</option>
-                            </select>
-                        </div>
-                        <!-- rg -->
-                        <div class="mb-3" style="padding-top: 5px;">
-                            <label for="formGroupExampleInput" class="form-label" id="rgFuncionarios">RG</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput"
-                                placeholder="Número do RG" required>
-                        </div>
-                        <!-- inicio -->
-                        <div class="mb-3" style="padding-top: 5px;">
-                            <label for="formGroupExampleInput" class="form-label" id="dataInicio">Data de Início</label>
-                            <input type="date" class="form-control" id="formGroupExampleInput" required>
-                        </div>
-
-                        <!-- salário -->
-                        <div id="containerSalario">
-                            <label for="salario">Salário</label>
-                            <div class="input-group mb-3">
-                                <span class="input-group-text">R$</span>
-                                <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
-                                    id="salario" required>
+                        <div class="modal-body">
+                            <!-- Nome -->
+                            <div class="mb-3">
+                                <label for="nomeFuncionario" class="form-label">Nome do Funcionário</label>
+                                <input type="text" class="form-control" id="nomeFuncionario" name="nome" placeholder="Fulano Da Silva" required>
+                            </div>
+    
+                            <!-- Cargos -->
+                            <div id="cargos-select">
+                                <label for="cargoFuncionario" class="form-label" style="padding-bottom: 5px;">Cargo</label>
+                                <select class="form-select" id="cargoFuncionario" name="cargo" aria-label="Default select example" required>
+                                    <option value="cozinheiro">Cozinheiro</option>
+                                    <option value="degustador">Degustador</option>
+                                    <option value="editor">Editor</option>
+                                    <option value="administrador">Administrador</option>
+                                </select>
+                            </div>
+    
+                            <!-- RG -->
+                            <div class="mb-3" style="padding-top: 5px;">
+                                <label for="rgFuncionario" class="form-label">RG</label>
+                                <input type="text" class="form-control" id="rgFuncionario" name="rg" placeholder="Número do RG" required>
+                            </div>
+    
+                            <!-- Data de Início -->
+                            <div class="mb-3" style="padding-top: 5px;">
+                                <label for="dataInicio" class="form-label">Data de Início</label>
+                                <input type="date" class="form-control" id="dataInicio" name="data_inicio" required>
+                            </div>
+    
+                            <!-- Salário -->
+                            <div id="containerSalario">
+                                <label for="salario" class="form-label">Salário</label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text">R$</span>
+                                    <input type="text" class="form-control" id="salario" name="salario" aria-label="Amount (to the nearest dollar)" required>
+                                </div>
+                            </div>
+    
+                            <!-- Nome Fantasia -->
+                            <div class="mb-3">
+                                <label for="nomeFantasia" class="form-label">Nome Fantasia</label>
+                                <input type="text" class="form-control" id="nomeFantasia" name="nome_fantasia" placeholder="Fulano Fantasia" required>
+                            </div>
+    
+                            <!-- Restaurantes -->
+                            <div id="restaurantes-select">
+                                <label for="restauranteFuncionario" class="form-label" style="padding-bottom: 5px;">Restaurantes</label>
+                                <select class="form-select" id="restauranteFuncionario" name="restaurante" aria-label="Default select example" required>
+                                    <option value="R1">R1</option>
+                                    <option value="R2">R2</option>
+                                    <option value="R3">R3</option>
+                                    <option value="R4">R4</option>
+                                </select>
+                            </div>
+    
+                            <!-- Status -->
+                            <div id="status">
+                                <label class="form-label">Status</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="1" id="statusFuncionario" name="status" checked>
+                                    <label class="form-check-label" for="statusFuncionario">
+                                        Ativo
+                                    </label>
+                                </div>
                             </div>
                         </div>
-                        <!-- nome fantasia-->
-                        <div class="mb-3">
-                            <label for="formGroupExampleInput" class="form-label" id="nomeFantasia">Nome
-                                Fantasia</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput"
-                                placeholder="Fulano Fantasia" required>
-                        </div>
-                        <!-- restaurantes -->
-                        <div id="restaurantes-select">
-                            <label for="form-select" style="padding-bottom: 5px;">Restaurantes</label>
-                            <select class="form-select" aria-label="Default select example" required>
-                                <option value="1">R1</option>
-                                <option value="2">R2</option>
-                                <option value="3">R3</option>
-                                <option value="4">R4</option>
-                            </select>
-                        </div>
-                        <!-- status -->
-                        <div id="staus">
-                            <label for="status">Status</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-                                <label class="form-check-label" for="flexCheckChecked">
-                                  Ativo
-                                </label>
-                              </div>
-                        </div>
-                        <!-- footer do modal -->
+                        <!-- Footer do modal -->
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary save-button">Salvar</button>
+                            <button type="submit" class="btn btn-primary save-button">Salvar</button>
                         </div>
                     </div>
                 </div>
             </div>
+        </form>
     </main>
+    
 
 
 
