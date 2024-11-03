@@ -1,0 +1,121 @@
+body {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    min-height: 100vh; 
+    margin: 0; 
+}
+
+#title{
+    text-align: center;
+    color: #7b1e3d;
+}
+
+/* tabela */
+.table{
+    width: 100% !important;
+    border:1px solid black;
+}
+
+#title-action{
+    text-align: center;
+}
+
+/* botões */
+/* editar e lixo */
+
+#btns-container{
+    text-align: center;
+}
+
+#btn-edit, #btn-trash{
+    border: none;
+    background-color: transparent;
+}
+
+#btn-edit:hover img {
+    filter: brightness(0) saturate(100%) invert(56%) sepia(60%) saturate(1308%) hue-rotate(165deg) brightness(95%) contrast(94%);
+}
+
+#btn-trash:hover img {
+    filter: brightness(0) saturate(100%) invert(36%) sepia(87%) saturate(2101%) hue-rotate(325deg) brightness(97%) contrast(101%);
+}
+
+/* procurar e adicionar */
+#btn-search, #btn-add {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+#btn-search:hover img, #btn-add:hover img{
+    filter: brightness(0) saturate(100%) invert(22%) sepia(81%) saturate(1848%) hue-rotate(319deg) brightness(91%) contrast(98%);
+}
+
+.actions-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 10px; 
+        
+}
+
+
+/* btn procurar */
+.search-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+#search-bar {
+    width: 0;
+    opacity: 0;
+    transition: width 0.3s, opacity 0.3s;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    margin-left: 5px;
+}
+
+.search-container.active #search-bar {
+    width: 150px;
+    opacity: 1;
+}
+
+#btn-search {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+/* modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.save-button {
+    background-color: #344749;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+
